@@ -86,7 +86,7 @@ resource "aws_security_group" "web-sg" {
   }
 }
 
-resource "aws_vpc_security_group_ingress_rule" "example" {
+resource "aws_vpc_security_group_ingress_rule" "ssh" {
   security_group_id = aws_security_group.web-sg.id
 
   cidr_ipv4   = "0.0.0.0/0"
@@ -94,7 +94,7 @@ resource "aws_vpc_security_group_ingress_rule" "example" {
   ip_protocol = "tcp"
   to_port     = 22
 }
-resource "aws_vpc_security_group_ingress_rule" "example" {
+resource "aws_vpc_security_group_ingress_rule" "web_port" {
   security_group_id = aws_security_group.web-sg.id
 
   cidr_ipv4   = "0.0.0.0/0"
