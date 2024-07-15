@@ -51,6 +51,7 @@ data "aws_ami" "ubuntu" {
 #               systemctl restart apache2
 #               EOF
 # }
+#
 
 resource "aws_instance" "prod" {
   ami                    = data.aws_ami.ubuntu.id
